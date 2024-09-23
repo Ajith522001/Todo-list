@@ -7,32 +7,32 @@ const TodoList = () => {
   const [editId, setEditId] = useState(null);
   const [editValue, setEditValue] = useState('');
 
-  // Add item
+  
   const addItem = () => {
     if (inputValue.trim() === '') return;
     setItems([...items, { id: Date.now(), text: inputValue }]);
-    setInputValue(''); // Clear input field after adding
+    setInputValue('');
   };
 
-  // Delete item
+
   const deleteItem = (id) => {
     const updatedItems = items.filter(item => item.id !== id);
     setItems(updatedItems);
   };
 
-  // Start editing item
+  
   const startEditItem = (id, text) => {
     setEditId(id);
     setEditValue(text);
   };
 
-  // Save edited item
+  
   const saveEditItem = (id) => {
     const updatedItems = items.map(item => 
       item.id === id ? { ...item, text: editValue } : item
     );
     setItems(updatedItems);
-    setEditId(null); // Reset edit state
+    setEditId(null); 
   };
 
   return (
