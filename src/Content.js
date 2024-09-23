@@ -37,13 +37,14 @@ const TodoList = () => {
 
   return (
     <main>
+      
       <input 
         type="text"
         value={inputValue}
         onChange={(e) => setInputValue(e.target.value)}
         placeholder="Add new item"
       />
-      <button onClick={addItem}>Add</button>
+      <button onClick={addItem} className="add">Add</button>
       
       <ul>
         {items.map((item) => (
